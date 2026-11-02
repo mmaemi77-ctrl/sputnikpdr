@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Разбор для PDR Спутник: сильные стороны, где теряются заявки, мастерские PDR в Симферополе, задачи сайта и вопросы">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сайт для PDR Спутник: рынок и конкуренты">
+<meta property="og:description" content="Сильные стороны, где теряются заявки, пять мастерских PDR в Симферополе и что должен делать сайт">
+<meta property="og:image" content="https://mmaemi77-ctrl.github.io/sputnikpdr/og-analiz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0C12">
+<title>PDR Спутник · разбор</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap">
+<style>
+/* Layout: разбор-документ в одну колонку в цветах Спутника. Шапка как ночной гараж под лампой, карточки только у отдельных объектов: конкуренты, переписка, идеи */
+:root{
+  --bg:#0B0C12;--bg2:#10121B;--surface:#161925;--surface2:#1E2231;--ink:#F3F4F9;--muted:#A6ABC2;--dim:#737893;--line:#272B3D;
+  --blue:#2A6AD8;--blue-hi:#4A88F0;--blue-tint:#16233F;--violet:#6A4BD6;--ok:#3CC47C;
+  --chat:#121521;--bubble:#1E2231;--bubble-out:#1F3550;
+  --font:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Unbounded","Onest",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16.5px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(clamp(16px,4vw,32px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,32px),env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue-hi);outline-offset:3px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:15px 24px;font-weight:700;font-size:15.5px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+
+/* шапка */
+.top{position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(180deg,#0F1A33,#0B0C12);border-bottom:1px solid var(--line)}
+.top::before{content:"";position:absolute;z-index:-1;right:-120px;top:-60px;width:520px;height:420px;background:radial-gradient(closest-side,rgb(74 136 240 / .22),transparent 70%),radial-gradient(closest-side at 70% 70%,rgb(106 75 214 / .2),transparent 70%)}
+.lamps{display:flex;gap:7vw;justify-content:center;padding-top:2px}
+.lamps i{display:block;width:clamp(60px,10vw,140px);height:4px;border-radius:4px;background:#E9EEFF;box-shadow:0 0 18px 4px rgb(200 215 255 / .5),0 0 60px 10px rgb(120 160 255 / .16)}
+.top .wrap{padding-block:clamp(30px,6vw,56px) clamp(34px,6vw,54px);display:grid;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:58px;height:58px;border-radius:50%;background:#FFFFFF}
+.brand b{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.15;display:block}
+.brand small{font-size:13px;color:var(--muted)}
+.top h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.03em}
+.top h1 em{font-style:normal;color:var(--blue-hi)}
+.top p{max-width:60ch;font-size:clamp(17px,1.8vw,19px);color:#C3CFEA}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{display:inline-flex;align-items:center;gap:8px;background:rgb(255 255 255 / .06);border:1px solid rgb(255 255 255 / .1);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px}
+.pills span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue-hi)}
+
+/* разделы */
+section{padding-block:clamp(34px,5vw,54px);border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3.2vw,34px);line-height:1.15;letter-spacing:-.02em;margin:8px 0 20px}
+h3{font-size:17px;font-weight:700;line-height:1.3}
+.lead{color:var(--muted);max-width:62ch;margin:-6px 0 22px}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.list li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue-hi);margin:9px 0 0 9px}
+.list.plus li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--blue-tint);color:var(--blue-hi);font-weight:800;font-size:13px;display:grid;place-items:center;margin:2px 0 0}
+.list b{font-weight:700}
+.list span{color:#D7DAE8}
+
+.key{display:grid;counter-reset:k;background:var(--surface);border-radius:22px;border:1px solid var(--line);overflow:hidden}
+.key div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.key div:last-child{border-bottom:0}
+.key div::before{counter-increment:k;content:counter(k);font-family:var(--display);font-weight:700;font-size:26px;line-height:1;color:var(--blue-hi)}
+.key b{font-weight:700}
+@media (max-width:600px){.key div{grid-template-columns:26px minmax(0,1fr);padding:16px}.key div::before{font-size:22px}}
+
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+.gal figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gal .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.gal img{width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.gal figcaption{font-size:13.5px;color:var(--muted);padding:9px 12px 11px}
+.reels{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:10px}
+.reels img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.cap{font-size:13.5px;color:var(--dim);margin-top:8px}
+@media (max-width:640px){.gal{grid-template-columns:1fr 1fr}.gal figure:last-child{display:none}.reels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.aud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:680px){.aud{grid-template-columns:1fr}}
+.aud>div{display:grid;gap:8px;align-content:start}
+.aud h3{margin-bottom:4px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:16px 16px 16px 4px;padding:10px 14px;font-weight:500;font-size:15px}
+.season{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink);margin-top:26px}
+.season div{padding:14px 14px 0 0;display:grid;gap:4px;align-content:start}
+.season b{font-family:var(--display);font-weight:700;font-size:17px}
+.season span{font-size:14px;color:var(--muted)}
+@media (max-width:600px){.season{grid-template-columns:1fr;gap:10px}}
+
+.comp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:680px){.comp{grid-template-columns:1fr}}
+.cc{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+.cc .where{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cc a{font-size:14px;font-weight:600;color:var(--blue-hi);text-underline-offset:3px;word-break:break-all}
+.cc p{font-size:15px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.tags span{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--line)}
+.small{font-size:13.5px;color:var(--dim);margin-top:14px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+@media (max-width:680px){.two{grid-template-columns:1fr}}
+.box{border-radius:20px;padding:20px;display:grid;gap:12px;align-content:start}
+.box.norm{background:var(--surface);border:1px solid var(--line)}
+.box.gap{background:var(--blue-tint);border:1px solid #284579}
+.box h3{font-family:var(--display);font-weight:700;font-size:17px}
+.box ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+
+.tasks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+@media (max-width:680px){.tasks{grid-template-columns:1fr}}
+.tasks div{border-top:2px solid var(--blue-hi);padding-top:12px;display:grid;gap:4px}
+.tasks p{font-size:15px;color:var(--muted)}
+
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:680px){.ba{grid-template-columns:1fr}}
+.chat{background:var(--chat);border:1px solid var(--line);border-radius:20px;padding:16px;display:grid;gap:8px;align-content:start}
+.chat .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.b{max-width:88%;padding:8px 12px;border-radius:14px;font-size:14.5px;line-height:1.45;white-space:pre-line}
+.b.in{justify-self:start;background:var(--bubble);border-bottom-left-radius:4px}
+.b.out{justify-self:end;background:#2A3A66;border-bottom-right-radius:4px}
+.b.ph{padding:4px;display:flex;gap:4px}
+.b.ph img{width:58px;height:58px;object-fit:cover;border-radius:10px}
+.b.tg{justify-self:stretch;max-width:none;background:var(--bubble-out);border-bottom-left-radius:4px;display:grid;gap:6px}
+.b.tg b{display:block;font-size:12.5px;color:#7CC4F5}
+.b.tg .th{display:flex;gap:4px}
+.b.tg .th img{width:48px;height:48px;object-fit:cover;border-radius:8px}
+.chat .foot{font-size:13px;color:var(--muted);margin-top:6px}
+
+.ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:680px){.ideas{grid-template-columns:1fr}}
+.ideas div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:grid;gap:4px;align-content:start}
+.ideas p{font-size:15px;color:var(--muted)}
+
+.qlist{margin:0;padding-left:24px;display:grid;gap:10px}
+.qlist li{padding-left:4px;color:#D7DAE8}
+.qlist li::marker{font-weight:800;color:var(--blue-hi)}
+
+footer{background:#07080C;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:22px;font-size:13.5px;color:var(--muted)}
+footer b{font-weight:800;letter-spacing:.06em;color:var(--ink)}
+.sign{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rnd{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);color:var(--ink)}
+.rnd:hover{background:var(--ink);color:var(--bg)}
+.rnd svg{width:16px;height:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="lamps" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="brand"><img src="img/logo.png" alt="" width="58" height="58"><span><b>PDR Спутник</b><small>вмятины без покраски и&nbsp;детейлинг</small></span></div>
+    <div class="eyebrow">Разбор для PDR Спутник · 2&nbsp;ноября 2026</div>
+    <h1>Сайт для PDR Спутник: рынок и&nbsp;<em>конкуренты</em></h1>
+    <p>Посмотрела ваш Instagram, Telegram-канал и&nbsp;мастерские PDR в&nbsp;Симферополе. Ниже: что у&nbsp;вас уже работает, где теряются заявки и&nbsp;что должен делать сайт.</p>
+    <div class="pills"><span>Симферополь</span><span>Удаление вмятин без покраски</span><span>Детейлинг</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <div class="eyebrow">Коротко</div>
+    <h2>Главное в&nbsp;пяти пунктах</h2>
+    <div class="key">
+      <div><p><b>Без выходных до&nbsp;21:00 и&nbsp;оценка по&nbsp;фото за&nbsp;5&nbsp;минут.</b> Это ваш главный довод. У&nbsp;двух мастерских, где я нашла график, воскресенье выходной, а&nbsp;суббота до&nbsp;15:00.</p></div>
+      <div><p>Рилс приводят людей: «Последствия от&nbsp;самоката» посмотрели около 7&nbsp;тысяч раз. Но&nbsp;дальше всё идёт в&nbsp;директ, а&nbsp;ссылка в&nbsp;шапке ведёт в&nbsp;Telegram-канал на&nbsp;33 подписчика.</p></div>
+      <div><p>Услуги, график и&nbsp;«пришлите фото» спрятаны в&nbsp;трёх хайлайтс. Новый человек их не&nbsp;открывает и&nbsp;пишет одно: «сколько будет моя вмятина».</p></div>
+      <div><p>У&nbsp;пяти мастерских PDR в&nbsp;Симферополе есть свои сайты, у&nbsp;большинства с&nbsp;ценами «от», примерами работ и&nbsp;гарантией 1&nbsp;год. Сайта PDR Спутник в&nbsp;поиске я не&nbsp;нашла.</p></div>
+      <div><p>Сайт делается за&nbsp;7–10 дней. Рилс, поиск и&nbsp;карты будут вести в&nbsp;одно место, где фото вмятины сразу превращается в&nbsp;заявку с&nbsp;днём визита.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Ваши сильные стороны</div>
+    <h2>Что у&nbsp;вас уже сильное</h2>
+    <ul class="list plus">
+      <li><span><b>График 7/0 с&nbsp;9:00 до&nbsp;21:00.</b> Можно приехать после работы и&nbsp;в&nbsp;воскресенье. Для человека с&nbsp;вмятиной это часто решает, к&nbsp;кому ехать.</span></li>
+      <li><span><b>Ответ по&nbsp;фото за&nbsp;5&nbsp;минут.</b> В&nbsp;хайлайтс «Консультация» прямо написано: пришлите фото с&nbsp;разных сторон, и&nbsp;через 5&nbsp;минут будете знать всю информацию. На&nbsp;сайте это станет кнопкой на&nbsp;первом экране.</span></li>
+      <li><span><b>Заводское ЛКП и&nbsp;гарантия на&nbsp;каждую работу.</b> «Сохраняем заводское ЛКП, приводим его в&nbsp;первозданный вид, даём гарантию» в&nbsp;шапке отвечает на&nbsp;главный страх: не&nbsp;испортят&nbsp;ли краску.</span></li>
+      <li><span><b>PDR и&nbsp;детейлинг в&nbsp;одном месте.</b> Шесть услуг: вмятины, полировка кузова, защита спецсоставами, полировка и&nbsp;оклейка фар, химчистка салона, удаление сколов и&nbsp;царапин. Один визит закрывает несколько задач.</span></li>
+      <li><span><b>Рилс, которые хочется досмотреть.</b> «Смешная машина», «Скрылись с&nbsp;места ДТП», «Ремонт за&nbsp;12 часов» про скорую. 829 подписчиков при 12&nbsp;публикациях: почти каждый пост работает.</span></li>
+      <li><span><b>Честные фото до&nbsp;и&nbsp;после.</b> Дверь у&nbsp;ручки, крыло у&nbsp;фонаря, решётка Octavia A7 с&nbsp;подписью мастера. Это готовый раздел «Работы».</span></li>
+    </ul>
+    <div class="gal">
+      <figure><div class="pair"><img src="img/dver-do.jpg" alt="Вмятина на двери у ручки до ремонта"><img src="img/dver-posle.jpg" alt="Дверь после ремонта"></div><figcaption>Дверь у&nbsp;ручки, до&nbsp;и&nbsp;после</figcaption></figure>
+      <figure><div class="pair"><img src="img/krylo-do.jpg" alt="Вмятина на заднем крыле до ремонта"><img src="img/krylo-posle.jpg" alt="Заднее крыло после ремонта"></div><figcaption>Заднее крыло у&nbsp;фонаря</figcaption></figure>
+      <figure><div class="pair"><img src="img/reshetka-do.jpg" alt="Octavia A7 до замены решётки"><img src="img/reshetka-posle.jpg" alt="Octavia A7 после замены решётки"></div><figcaption>Решётка, Octavia A7</figcaption></figure>
+    </div>
+    <div class="reels">
+      <img src="img/r-utrom.jpg" alt="Обложка рилс «Утром приехал, в обед уехал»"><img src="img/r-12h.jpg" alt="Обложка рилс «Ремонт за 12 часов»"><img src="img/r-5min.jpg" alt="Обложка рилс «5 минут и ровно»"><img src="img/r-samokat.jpg" alt="Обложка рилс «Последствия от самоката»"><img src="img/r-smeh.jpg" alt="Обложка рилс «Смешная машина»"><img src="img/r-dtp.jpg" alt="Обложка рилс «Скрылись с места ДТП»">
+    </div>
+    <p class="cap">Фото из&nbsp;вашего Telegram-канала и&nbsp;обложки рилс из&nbsp;Instagram</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Где теряются заявки</div>
+    <h2>Что сейчас мешает</h2>
+    <ul class="list">
+      <li><span>В&nbsp;шапке профиля нет адреса и&nbsp;телефона, только «Пишите в&nbsp;Direct!». Человеку, который хочет просто приехать, приходится спрашивать, где вы.</span></li>
+      <li><span>Каждая оценка собирается по&nbsp;кусочкам: фото, потом марка, потом «краска цела?», потом «а&nbsp;в&nbsp;воскресенье можно?». Мастер отвечает между работами, и&nbsp;часть людей не&nbsp;дожидается.</span></li>
+      <li><span>Цен «от» нет ни&nbsp;в&nbsp;шапке, ни&nbsp;в&nbsp;хайлайтс. У&nbsp;соседей на&nbsp;сайтах они есть: от&nbsp;500 и&nbsp;от&nbsp;1&nbsp;000&nbsp;₽, или 5, 10 и&nbsp;20 тысяч по&nbsp;размеру вмятины. Кто сравнивает, уходит туда, где видит цифру.</span></li>
+      <li><span>Тот, кто ищет «вмятины без покраски Симферополь» в&nbsp;Яндексе, видит сайты других мастерских. Профиля в&nbsp;Instagram в&nbsp;этой выдаче я не&nbsp;увидела.</span></li>
+      <li><span>Фото до&nbsp;и&nbsp;после лежат в&nbsp;Telegram-канале на&nbsp;33 подписчика, а&nbsp;самые сильные видео в&nbsp;ленте Instagram. Собрать их в&nbsp;одном месте пока негде.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="eyebrow">Клиенты</div>
+    <h2>Что спрашивают перед ремонтом</h2>
+    <p class="lead">Две группы вопросов, и&nbsp;на&nbsp;обе сайт отвечает до&nbsp;того, как человек напишет вам.</p>
+    <div class="aud">
+      <div><h3>Вмятина</h3>
+        <div class="q">Сколько будет стоить моя вмятина?</div>
+        <div class="q">Получится без покраски, если краска чуть треснула?</div>
+        <div class="q">Подождать на&nbsp;месте или оставить машину?</div>
+        <div class="q">Не&nbsp;будет видно, где была вмятина?</div>
+        <div class="q">Есть гарантия?</div>
+      </div>
+      <div><h3>Детейлинг</h3>
+        <div class="q">Сколько стоит полировка кузова и&nbsp;сколько по&nbsp;времени?</div>
+        <div class="q">Фары помутнели: полировать или оклеить?</div>
+        <div class="q">Химчистку можно сделать за&nbsp;один день?</div>
+        <div class="q">Можно в&nbsp;воскресенье или вечером после работы?</div>
+      </div>
+    </div>
+    <div class="season">
+      <div><b>Зима</b><span>снег и&nbsp;лёд с&nbsp;крыш, парковки у&nbsp;сугробов, защита кузова от&nbsp;реагентов</span></div>
+      <div><b>Весна и&nbsp;лето</b><span>град, полировка после зимы, химчистка перед отпуском</span></div>
+      <div><b>Весь год</b><span>двери на&nbsp;парковках, самокаты, продажа машины</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Рынок</div>
+    <h2>Кто ещё работает в&nbsp;нише</h2>
+    <div class="comp">
+      <div class="cc">
+        <span class="where">Симферополь · ул. Красноармейская, 1/1</span>
+        <h3>PDR-SERVICE</h3>
+        <a href="https://pdr-service.ru/" target="_blank" rel="noopener">pdr-service.ru</a>
+        <p>Кузовной ремонт и&nbsp;удаление вмятин без покраски. Таблица цен по&nbsp;размеру вмятины: от&nbsp;1&nbsp;000&nbsp;₽ до&nbsp;1&nbsp;см и&nbsp;до&nbsp;15–25 тыс.&nbsp;₽ до&nbsp;35–50&nbsp;см. Примеры работ по&nbsp;маркам с&nbsp;ценой, гарантия 1&nbsp;год. Пн–пт 9:00–19:00, сб 9:00–15:00.</p>
+        <div class="tags"><span>Цены по&nbsp;размеру</span><span>Работы с&nbsp;ценой</span><span>Гарантия 1&nbsp;год</span></div>
+      </div>
+      <div class="cc">
+        <span class="where">Симферополь · ул. Аральская, 73</span>
+        <h3>PDR-центр Крым</h3>
+        <a href="https://pdr-crimea.ru/" target="_blank" rel="noopener">pdr-crimea.ru</a>
+        <p>От&nbsp;1&nbsp;000&nbsp;₽, от&nbsp;30&nbsp;минут до&nbsp;2&nbsp;дней. Гарантия 1&nbsp;год по&nbsp;договору. Кейсы с&nbsp;ценой и&nbsp;сроком, например Mazda CX-5 после снега с&nbsp;крыши. Есть детейлинг и&nbsp;обучение PDR.</p>
+        <div class="tags"><span>Кейсы с&nbsp;ценой и&nbsp;сроком</span><span>Детейлинг</span><span>Обучение</span></div>
+      </div>
+      <div class="cc">
+        <span class="where">Симферополь · ул. Бородина, 57</span>
+        <h3>PDR-BOX</h3>
+        <a href="http://pdr-box.ru/" target="_blank" rel="noopener">pdr-box.ru</a>
+        <p>От&nbsp;1&nbsp;500 до&nbsp;35&nbsp;000&nbsp;₽, сложная работа от&nbsp;1 до&nbsp;4&nbsp;часов. Вмятины после града и&nbsp;упавших деревьев, выезд мастера. Пн–пт 9:00–18:00, сб 9:00–15:00, вс выходной.</p>
+        <div class="tags"><span>Вилка цен</span><span>Выезд мастера</span><span>После града</span></div>
+      </div>
+      <div class="cc">
+        <span class="where">Симферополь · ул. Севастопольская, 227</span>
+        <h3>Neon Expert</h3>
+        <a href="https://neonexpert.ru/services/udalenie-vmyatin/" target="_blank" rel="noopener">neonexpert.ru</a>
+        <p>Три цены по&nbsp;размеру: мелкие вмятины 5&nbsp;000&nbsp;₽, средние 10&nbsp;000&nbsp;₽, крупные около 20&nbsp;000&nbsp;₽. Примерную цену называют по&nbsp;фото в&nbsp;мессенджере, точную после осмотра и&nbsp;фиксируют в&nbsp;договоре.</p>
+        <div class="tags"><span>Три цены</span><span>Фото в&nbsp;мессенджер</span><span>Цена в&nbsp;договоре</span></div>
+      </div>
+      <div class="cc">
+        <span class="where">Симферополь · ул. Калинина, 61</span>
+        <h3>Авто Престиж</h3>
+        <a href="https://autoprestige-crimea.ru/pdr" target="_blank" rel="noopener">autoprestige-crimea.ru</a>
+        <p>Покраска и&nbsp;кузовной ремонт, отдельная страница про удаление вмятин без покраски и&nbsp;раздел отзывов. Пишут, что работают с&nbsp;машинами любых марок.</p>
+        <div class="tags"><span>Страница PDR</span><span>Отзывы на&nbsp;сайте</span></div>
+      </div>
+    </div>
+    <p class="small">Описания собраны по&nbsp;открытым данным и&nbsp;поисковой выдаче на&nbsp;2&nbsp;ноября 2026. Цены и&nbsp;график у&nbsp;мастерских могли измениться.</p>
+    <div class="two">
+      <div class="box norm"><h3>Что стало нормой</h3><ul><li>Свой сайт, который находится в&nbsp;Яндексе</li><li>Цены «от» или по&nbsp;размеру вмятины</li><li>Примеры работ с&nbsp;маркой машины</li><li>Гарантия 1&nbsp;год</li></ul></div>
+      <div class="box gap"><h3>Чего я у&nbsp;них не&nbsp;встретила</h3><ul><li>Загрузку фото вмятины прямо на&nbsp;сайте с&nbsp;выбором дня</li><li>Ответ по&nbsp;фото за&nbsp;5&nbsp;минут как обещание</li><li>Работу в&nbsp;воскресенье и&nbsp;до&nbsp;21:00 у&nbsp;тех, где указан график</li><li>Видео ремонта рядом с&nbsp;фото до&nbsp;и&nbsp;после</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Задачи</div>
+    <h2>Что должен делать ваш сайт</h2>
+    <div class="tasks">
+      <div><h3>Принимать фото вмятины</h3><p>До&nbsp;трёх фото, марка и&nbsp;деталь приходят вам в&nbsp;Telegram одним сообщением.</p></div>
+      <div><h3>Записывать на&nbsp;удобный день</h3><p>Семь дней в&nbsp;неделю: утром, днём или вечером до&nbsp;21:00.</p></div>
+      <div><h3>Показывать работы</h3><p>До&nbsp;и&nbsp;после по&nbsp;деталям: двери, крылья, капот. Рядом ваши рилс.</p></div>
+      <div><h3>Называть цены «от»</h3><p>По&nbsp;услугам детейлинга и&nbsp;по&nbsp;размеру вмятины, чтобы не&nbsp;терять тех, кто сравнивает.</p></div>
+      <div><h3>Отвечать на&nbsp;частые вопросы</h3><p>Краска, следы, время, гарантия и&nbsp;что делать после града.</p></div>
+      <div><h3>Находиться в&nbsp;поиске</h3><p>По&nbsp;запросу «вмятины без покраски Симферополь», плюс ссылка в&nbsp;шапке Instagram.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Пример</div>
+    <h2>Было и&nbsp;стало</h2>
+    <p class="lead">Так обычно выглядит путь от&nbsp;первого вопроса до&nbsp;записи, и&nbsp;так он выглядит с&nbsp;сайтом.</p>
+    <div class="ba">
+      <div class="chat">
+        <span class="lbl">Сейчас</span>
+        <div class="b in">Здравствуйте, сколько будет убрать вмятину?</div>
+        <div class="b out">Здравствуйте! Пришлите фото с&nbsp;разных сторон</div>
+        <div class="b in ph"><img src="img/dver-do.jpg" alt=""></div>
+        <div class="b out">Какая машина? Краска целая?</div>
+        <div class="b in">Солярис, вроде целая. А&nbsp;в&nbsp;воскресенье можно?</div>
+        <p class="foot">Пять сообщений, а&nbsp;мастер в&nbsp;это время под&nbsp;лампой с&nbsp;другой машиной.</p>
+      </div>
+      <div class="chat">
+        <span class="lbl">С&nbsp;сайтом</span>
+        <div class="b tg"><b>Заявка с&nbsp;сайта PDR Спутник</b><div class="th"><img src="img/dver-do.jpg" alt=""><img src="img/krylo-do.jpg" alt=""></div>• Фото: 2
+• Hyundai Solaris, задняя дверь
+• Приедет: воскресенье, утром к&nbsp;9:00
+• Алексей, +7&nbsp;978&nbsp;…</div>
+        <p class="foot">Одно сообщение. Мастеру остаётся ответить ценой.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Идеи</div>
+    <h2>Что можно предложить вашим клиентам</h2>
+    <p class="lead">Это варианты на&nbsp;обсуждение, берите то, что подходит.</p>
+    <div class="ideas">
+      <div><h3>Перед продажей машины</h3><p>Убрать вмятины и&nbsp;отполировать кузов за&nbsp;день. Машина без вмятин продаётся дороже, а&nbsp;заводская краска на&nbsp;месте и&nbsp;толщиномер это покажет.</p></div>
+      <div><h3>Сертификат к&nbsp;Новому году</h3><p>Химчистка салона или полировка фар в&nbsp;подарок мужу, папе или другу-автомобилисту.</p></div>
+      <div><h3>Зимняя защита кузова</h3><p>Защита спецсоставами до&nbsp;реагентов и&nbsp;заодно проверка мелких вмятин с&nbsp;парковки.</p></div>
+      <div><h3>«Утром приехал, в&nbsp;обед уехал»</h3><p>Запись на&nbsp;9:00 с&nbsp;выдачей к&nbsp;обеду как отдельная кнопка. Ваш рилс уже это обещает.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Вопросы</div>
+    <h2>Что нужно уточнить</h2>
+    <ol class="qlist">
+      <li>Где находится мастерская и&nbsp;как к&nbsp;вам проехать? Есть&nbsp;ли точка на&nbsp;Яндекс Картах или в&nbsp;2ГИС?</li>
+      <li>Можно&nbsp;ли показывать цены «от» на&nbsp;сайте? Хотя&nbsp;бы по&nbsp;детейлингу и&nbsp;по&nbsp;размеру вмятины.</li>
+      <li>Гарантия: на&nbsp;какой срок и&nbsp;на&nbsp;что именно?</li>
+      <li>Куда удобнее получать заявки с&nbsp;фото: в&nbsp;Telegram, WhatsApp или в&nbsp;директ?</li>
+      <li>Есть&nbsp;ли оригиналы фото и&nbsp;видео до&nbsp;и&nbsp;после? Сейчас я взяла кадры из&nbsp;Telegram-канала.</li>
+      <li>Что за&nbsp;вторая ссылка в&nbsp;шапке Instagram? Если там уже есть сайт или Taplink, перенесём всё нужное.</li>
+      <li>Мастер один или вас несколько? Хотите показать мастеров на&nbsp;сайте по&nbsp;имени?</li>
+      <li>Название ИП для&nbsp;политики конфиденциальности.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Подготовила Анастасия Абдуллаева</span>
+    <span class="sign"><span><b>FOR.MI</b> designed &amp; developed by ABN</span><a class="rnd" href="https://t.me/abanev_dev" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.5c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.5c.2.6.4.8.9.8s.6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8L22.8 5.8c.3-1.3-.4-1.9-1.4-1.5zM8.6 14.1l9.6-6c.5-.3.9-.1.5.2l-7.8 7.1-.3 3.3-2-4.6z"/></svg></a></span>
+  </div>
+</footer>
+
+</body>
+</html>
